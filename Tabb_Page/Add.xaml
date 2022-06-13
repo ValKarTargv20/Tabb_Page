@@ -1,12 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:tabb_page="clr-namespace:Tabb_Page" x:DataType="tabb_page:MainPage"
              x:Class="Tabb_Page.Add"
              Title="Add Project" BackgroundColor="LightCyan" Padding="10">
     <ContentPage.Content>
         <StackLayout>
-
+            <Image Source="{Binding Project_pic}"/>
+            <Label Text="Idea:"/>
+            <Entry Text="{Binding Name}"/>
+            <Label Text="Notes:"/>
+            <Entry Text="{Binding Notes}"/>
+            <Label Text="Pattern URL:"/>
+            <Entry Text="{Binding Pattern_url}"/>
+            <Label Text="Rows:"/>
+            <Entry Text="{Binding Pattern_url}"/>
+            <Image Source="{Binding Pattern_pic}"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Save Project" Clicked="Save_Clicked" BackgroundColor="Cyan"/>
+                <Button Text="Cancel" Clicked="Cancel" BackgroundColor="Cyan"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Button Text="Get Project Picture" Clicked="GetProject_Clicked" BackgroundColor="Cyan"/>
+                <Button Text="Get Pattern Picture" Clicked="GetPattern_Clicked" BackgroundColor="Cyan"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

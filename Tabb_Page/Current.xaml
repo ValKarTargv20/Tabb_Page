@@ -4,7 +4,26 @@
              x:Class="Tabb_Page.Current"
              Title="In work" BackgroundColor="LightCyan" Padding="10">
     <ContentPage.Content>
-        <StackLayout Margin="10" Orientation="Vertical">
+        <StackLayout>
+            <ListView x:Name="listProject" ItemsSource="{Binding}" ItemSelected="List_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding Project_pic}" VerticalOptions="Start" HeightRequest="50" Grid.Column="0" Grid.RowSpan="2"/>
+                                <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="{Binding Rows}" Grid.Column="1" Grid.Row="1" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

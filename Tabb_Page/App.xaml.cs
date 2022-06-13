@@ -7,9 +7,10 @@ namespace Tabb_Page
 {
     public partial class App : Application
     {
-        public const string DATABASE_NAME = "project.bd";
+        public const string DATABASE_NAME = "project.db";
+        public const string IDATABASE_NAME = "idea.db";
         public static RepositoryDB database;
-
+        public static IdeaRepository idatabase;
         public static RepositoryDB Database
         {
             get
@@ -19,6 +20,17 @@ namespace Tabb_Page
                     database = new RepositoryDB(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME));
                 }
                 return database;
+            }
+        }
+        public static IdeaRepository IDatabase
+        {
+            get
+            {
+                if(idatabase== null)
+                {
+                    idatabase = new IdeaRepository(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME));
+                }
+                return idatabase;
             }
         }
         public App()
